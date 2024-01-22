@@ -90,7 +90,7 @@ const Dashboard3com = () => {
                   <div className="text-justified align-items-center">
                     <h2 className="text-dark font-weight-semibold mb-3 mt-2">
                       Hi, Welcome Back{" "}
-                      <span className="text-primary">Nick!</span>
+                      <span className="text-primary">Fariha!</span>
                     </h2>
                     <p className="text-dark tx-17 mb-2 lh-3">
                       {" "}
@@ -112,7 +112,7 @@ const Dashboard3com = () => {
         </Col>
         <Col xl={5} lg={12} md={12} sm={12}>
           {/* <!-- <div className="container"> --> */}
-          <Row>
+          {/* <Row>
             <Col xs={12} lg={6} xl={6} md={12}>
               <Card className="sales-card circle-image1">
                 <Row>
@@ -245,14 +245,14 @@ const Dashboard3com = () => {
                 </Row>
               </Card>
             </Col>
-          </Row>
+          </Row> */}
         </Col>
         {/* <!-- </div> --> */}
       </Row>
       {/* <!-- row closed --> */}
 
       {/* <!-- row --> */}
-      <Row>
+      {/* <Row>
         <Col xl={6} lg={12} md={12} sm={12}>
           <Card className=" custom-card overflow-hidden">
             <Card.Header className=" border-bottom-0">
@@ -586,10 +586,10 @@ const Dashboard3com = () => {
             </Card.Body>
           </Card>
         </Col>
-      </Row>
+      </Row> */}
 
       {/* <!-- row --> */}
-      <Row className=" row-sm">
+      {/* <Row className=" row-sm">
         <Col md={12} lg={12} xl={6} xxl={3}>
           <Card>
             <Card.Header className=" bg-transparent pb-0">
@@ -1036,11 +1036,11 @@ const Dashboard3com = () => {
             </Card.Body>
           </Card>
         </Col>
-      </Row>
+      </Row> */}
       {/* <!-- row closed --> */}
 
       {/* <!-- row  --> */}
-      <Row>
+      {/* <Row>
         <Col sm={12} className="col-12">
           <Card>
             <Card.Header>
@@ -1178,7 +1178,7 @@ const Dashboard3com = () => {
             </Card.Body>
           </Card>
         </Col>
-      </Row>
+      </Row> */}
       {/* <!-- /row --> */}
     </div>
   );

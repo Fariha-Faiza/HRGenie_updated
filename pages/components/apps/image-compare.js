@@ -2,7 +2,7 @@ import React from 'react';
 import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
 import ReactCompareImage from "react-compare-image";
 import img1 from "../../../public/assets/img/photos/compare1.jpg";
-import img2 from "../../../public/assets/img/photos/compare2.jpg";
+import img2 from '../../../public/assets/img/photos/compare2.jpg';
 import Seo from '@/shared/layout-components/seo/seo';
 
 const Imagecompare = () => (

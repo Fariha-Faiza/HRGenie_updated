@@ -43,13 +43,14 @@ export const MENUITEMS = [
           ],
         },
       ],
-    },
+    }
+    ,
   
     {
-      menutitle: "WEB APPS",
+      menutitle: "User Management",
       Items: [
         {
-          title: "Apps",
+          title: "User Create",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"

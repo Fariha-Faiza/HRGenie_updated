@@ -99,6 +99,55 @@ export default function Home() {
                 className="nav-link"
                 data-bs-target="#country-selector"
                 data-bs-toggle="modal"
+                href="/components/landingPageContents/navbar/home/"
+       
+                style = {{"paddingRight": "24px"}}
+            >
+             Home
+      
+            </Link>
+
+            <Link
+                className="nav-link"
+                data-bs-target="#country-selector"
+                data-bs-toggle="modal"
+                href="/components/landingPageContents/navbar/about/"
+             
+                style = {{"paddingRight": "24px"}}
+            >
+         About
+      
+            </Link>
+
+            <Link
+                className="nav-link"
+                data-bs-target="#country-selector"
+                data-bs-toggle="modal"
+                href="/components/landingPageContents/navbar/features/"
+             
+                style = {{"paddingRight": "24px"}}
+            >
+     Features
+      
+            </Link>
+
+            <Link
+                className="nav-link"
+                data-bs-target="#country-selector"
+                data-bs-toggle="modal"
+                href="/components/landingPageContents/navbar/resources/"
+             
+                style = {{"paddingRight": "24px"}}
+            >
+     Resources 
+      
+            </Link>
+
+
+                <Link
+                className="nav-link"
+                data-bs-target="#country-selector"
+                data-bs-toggle="modal"
                 href="/components/landingPageContents/navbar/pricing/"
                 // onClick={() => routeChangeToPricing()}
                 style = {{"paddingRight": "24px"}}
@@ -112,7 +161,7 @@ export default function Home() {
                 className="nav-link"
                 data-bs-target="#country-selector"
                 data-bs-toggle="modal"
-               href="signupWithAuth"
+               href="/components/landingPageContents/navbar/system_admin_signIn/"
                 onClick={() => routeChange()}
                 style = {{"paddingRight": "24px"}}
             >
