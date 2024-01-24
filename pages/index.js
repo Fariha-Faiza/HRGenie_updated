@@ -162,16 +162,29 @@ export default function Home() {
                 data-bs-target="#country-selector"
                 data-bs-toggle="modal"
                href="/components/landingPageContents/navbar/system_admin_signIn/"
-                onClick={() => routeChange()}
+               // onClick={() => routeChange()}
                 style = {{"paddingRight": "24px"}}
             >
-             SignIn 
+             Admin
             
 
                 
             </Link>
 
         
+            <Link
+                className="nav-link"
+                data-bs-target="#country-selector"
+                data-bs-toggle="modal"
+               href="/components/landingPageContents/navbar/clientSignIn/"
+               // onClick={() => routeChange()}
+                style = {{"paddingRight": "24px"}}
+            >
+             SignIn
+            
+
+                
+            </Link>
     
            </div>
         </>

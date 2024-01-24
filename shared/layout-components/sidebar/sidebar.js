@@ -1,6 +1,7 @@
 
 import React, { Fragment, useState, useEffect } from "react";
 import { MENUITEMS } from "./nav";
+import { LEFTITEMS } from "../../../pages/components/systemUser/layout-components/left-sidebar/left-sidebar";
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import Link from "next/link"
 import { useRouter } from "next/router";
@@ -9,7 +10,7 @@ let history = [];
 const Sidebar = () => {
   let location = useRouter();
   let { basePath } = useRouter()
-  const [menuitems, setMenuitems] = useState(MENUITEMS);
+  const [menuitems, setMenuitems] = useState(LEFTITEMS);
   // initial loading
   useEffect(() => {
 

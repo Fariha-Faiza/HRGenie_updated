@@ -9,55 +9,55 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Seo from '@/shared/layout-components/seo/seo'
 
-function System_admin_signIn() {
-  useEffect(() => {
-    if(document.body){
-      document.querySelector("body").classList.add("ltr","error-page1","bg-primary")
-    }
-  
-    return () => {
-      document.body.classList.remove("ltr","error-page1","bg-primary")
-    }
-  }, [])
+function ClientSignIn() {
 
-
-  // Firebase
-  const [err, setError] = useState("");
-  const [data, setData] = useState({
-   "email": "adminnextjs@gmail.com",
-  "password": "1234567890",
-  })
-  const { email, password } = data;
-  const changeHandler = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value })
-    setError("");
-  }
-  let navigate = useRouter(); 
-  const routeChange = () =>{ 
-    let path = `/components/dashboards/dashboard3`; 
-    navigate.push(path);
-  }
-
-  const Login = (e) => {
-    e.preventDefault();
-    auth.signInWithEmailAndPassword(email, password).then(
-      user => {console.log(user);routeChange()}).catch(err => {console.log(err);setError(err.message)})
-  }
-
-  const ReactLogin = (e) => {
-    console.log(data);
-    if (data.email == "adminnextjs@gmail.com" && data.password == "1234567890"){
-      routeChange()
-    }
-    else{
-      setError("The Auction details did not Match")
-      setData({
-        "email": "adminnextjs@gmail.com",
-       "password": "1234567890",
-       })
-    }
-  }
-
+    useEffect(() => {
+        if(document.body){
+          document.querySelector("body").classList.add("ltr","error-page1","bg-primary")
+        }
+      
+        return () => {
+          document.body.classList.remove("ltr","error-page1","bg-primary")
+        }
+      }, [])
+    
+    
+      // Firebase
+      const [err, setError] = useState("");
+      const [data, setData] = useState({
+       "email": "adminnextjs@gmail.com",
+      "password": "1234567890",
+      })
+      const { email, password } = data;
+      const changeHandler = (e) => {
+        setData({ ...data, [e.target.name]: e.target.value })
+        setError("");
+      }
+      let navigate = useRouter(); 
+      const routeChange = () =>{ 
+        let path = `/components/dashboards/dashboard3`; 
+        navigate.push(path);
+      }
+    
+      const Login = (e) => {
+        e.preventDefault();
+        auth.signInWithEmailAndPassword(email, password).then(
+          user => {console.log(user);routeChange()}).catch(err => {console.log(err);setError(err.message)})
+      }
+    
+      const ReactLogin = (e) => {
+        console.log(data);
+        if (data.email == "adminnextjs@gmail.com" && data.password == "1234567890"){
+          routeChange()
+        }
+        else{
+          setError("The Auction details did not Match")
+          setData({
+            "email": "adminnextjs@gmail.com",
+           "password": "1234567890",
+           })
+        }
+      }
   return (
     <>
     <Head>
@@ -221,4 +221,4 @@ function System_admin_signIn() {
   )
 }
 
-export default System_admin_signIn
+export default ClientSignIn

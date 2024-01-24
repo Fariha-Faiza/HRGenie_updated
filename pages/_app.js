@@ -7,7 +7,7 @@ import SSRProvider from 'react-bootstrap/SSRProvider';
 
 
 const layouts = {
-  Contentlayout: Contentlayout,
+   Contentlayout: Contentlayout,
   Landingpagelayout: Landingpagelayout,
   Switcherlayout: Switcherlayout,
   Authenticationlayout: Authenticationlayout,

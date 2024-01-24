@@ -22,6 +22,7 @@ const Contentlayout = ({ children }) => {
   }
   const responsiveSidebarclose = () => {
     //leftsidemenu
+    
     if (window.innerWidth < 992){
     document.querySelector(".app").classList.remove("sidenav-toggled");
   }
