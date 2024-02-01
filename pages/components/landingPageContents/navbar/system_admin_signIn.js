@@ -24,9 +24,9 @@ function System_admin_signIn() {
   // Firebase
   const [err, setError] = useState("");
   const [data, setData] = useState({
-   "email": "adminnextjs@gmail.com",
-  "password": "1234567890",
-  })
+  //  "email": "adminnextjs@gmail.com",
+  // "password": "1234567890",
+   })
   const { email, password } = data;
   const changeHandler = (e) => {
     setData({ ...data, [e.target.name]: e.target.value })
@@ -57,6 +57,49 @@ function System_admin_signIn() {
        })
     }
   }
+
+  function SystemAdminLogin(e) {
+    e.preventDefault();
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/json", )
+    let my_url = `http://115.127.82.154:8080/sysuser/login` ////// Super Admin
+    let my_data = { 
+      email: email, 
+      password: password 
+    }  
+  
+    const requestOptions = { 
+      method: "POST",
+      headers: myHeaders, 
+      // body: formData,
+      body: JSON.stringify(my_data),
+      redirect: "follow",
+    }
+    return fetch(my_url, requestOptions).then((res) => {
+      console.log("data", res)
+      return res.json().then((data) => {
+        
+        console.log("data", data)
+        if (res.ok) {
+        let token = data.Token
+        sessionStorage.setItem("token", token)
+         // setToken(data.token.access);
+          //history.push("/org/permission");
+           console.log("session ", sessionStorage.setItem("token", token));
+         // console.log( "token" , localStorage.setItem("token", Token))
+        
+           routeChange()
+          return { ok: true, data }
+        } else {
+         // setError(data.error);
+          return { ok: false, err: res, data }
+        }
+      })
+
+    })
+  
+  }
+
 
   return (
     <>
@@ -134,7 +177,7 @@ function System_admin_signIn() {
                                           required
                                         />
                                       </Form.Group>
-                                      <Button onClick={ReactLogin}
+                                      <Button onClick={SystemAdminLogin}
                                         variant=""
                                         className="btn btn-primary btn-block"
                                       >

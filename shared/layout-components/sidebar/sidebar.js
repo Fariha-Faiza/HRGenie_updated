@@ -10,7 +10,7 @@ let history = [];
 const Sidebar = () => {
   let location = useRouter();
   let { basePath } = useRouter()
-  const [menuitems, setMenuitems] = useState(LEFTITEMS);
+  const [menuitems, setMenuitems] = useState(MENUITEMS);
   // initial loading
   useEffect(() => {
 

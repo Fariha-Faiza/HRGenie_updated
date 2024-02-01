@@ -8,7 +8,7 @@ const Gallery = () => {
     <div>
       <Seo title={"Gallery"}/>
 
-      <Gallerycom/>
+       <Gallerycom/> 
     </div>
   );
 }

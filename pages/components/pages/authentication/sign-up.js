@@ -1,9 +1,71 @@
 import React from "react";
 import Link from "next/link";
+import { useEffect, useState } from 'react'
 import {  Button, Col, Form, FormGroup, Row } from 'react-bootstrap';
 // import * as Switcherdatacustam from "../../../../shared/data/switcher/Switcherdatacustam";
 import Seo from "@/shared/layout-components/seo/seo";
 const SignUp = () =>{
+  const [err, setError] = useState("");
+  const [data, setData] = useState({
+    fullName: "xyz",
+    email: "123@xyx.com", 
+    userName: "xyx", 
+    password :"****"
+     })
+     const { fullName, email, userName, password  } = data;  
+
+     const changeHandler = (e) => {
+      setData({ ...data, [e.target.name]: e.target.value })
+      setError("");
+    }
+    const routeChange = () =>{ 
+      let path = `/components/landingPageContents/navbar/system_admin_signIn`; 
+      navigate.push(path);
+    }
+
+    
+ 
+
+    function systemAdminRegistration(e) {
+      e.preventDefault();
+      const myHeaders = new Headers()
+      myHeaders.append("Content-Type", "application/json", )
+      let my_url = `http://115.127.82.154:8080/sysuser/create` ////// Super Admin
+      let my_data = { 
+    full_name: fullName,
+    email: email,
+    username: userName,
+    password:password,   
+      }  
+      const requestOptions = { 
+        method: "POST",
+        headers: myHeaders, 
+        // body: formData,
+        body: JSON.stringify(my_data),
+        redirect: "follow",
+      }
+      return fetch(my_url, requestOptions).then((res) => {
+        console.log("data", res)
+        return res.json().then((data) => {
+          
+          console.log("data", data)
+          if (res.ok) {
+           // setToken(data.token.access);
+            //history.push("/org/permission");
+            routeChange()
+            return { ok: true, data }
+          } else {
+           // setError(data.error);
+            return { ok: false, err: res, data }
+          }
+        })
+  
+      })
+    
+    }
+  
+
+
   return (
     <div>
       <Seo title={"Sign-Up"}/>
@@ -55,6 +117,10 @@ const SignUp = () =>{
                                 className="form-control"
                                 placeholder="Enter your firstname and lastname"
                                 type="text"
+                                name='fullName'
+                                value={fullName}
+                                onChange={changeHandler}
+                                required
                               />
                             </FormGroup>
                             <FormGroup className="form-group">
@@ -63,17 +129,39 @@ const SignUp = () =>{
                                 className="form-control"
                                 placeholder="Enter your email"
                                 type="text"
+                                name='email'
+                                value={email}
+                                onChange={changeHandler}
+                                required
                               />
                             </FormGroup>
+
+                            <FormGroup className="form-group">
+                              <Form.Label>UserName</Form.Label>{" "}
+                              <Form.Control
+                                className="form-control"
+                                placeholder="Enter your user name"
+                                type="text"
+                                name='userName'
+                                value={userName}
+                                onChange={changeHandler}
+                                required
+                              />
+                            </FormGroup>
+
                             <FormGroup className="form-group">
                               <Form.Label>Password</Form.Label>{" "}
                               <Form.Control
                                 className="form-control"
                                 placeholder="Enter your password"
                                 type="password"
+                                name='password'
+                                value={password}
+                                onChange={changeHandler}
+                                required
                               />
                             </FormGroup>
-                            <Button
+                            <Button onClick={systemAdminRegistration}
                               variant=""
                               className="btn btn-primary btn-block"
                             >
